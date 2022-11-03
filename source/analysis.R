@@ -14,7 +14,8 @@ get_total_cases <- function() {
   return(prettyNum(total_cases,big.mark=",",scientific=FALSE))
 }
 
-?prettyNum()
+get_total_cases(national)
+print(national)
 
 # This function returns the total number of cases in the US
 get_total_deaths <- function() {
@@ -23,9 +24,10 @@ get_total_deaths <- function() {
     pull(deaths)
   return(total_deaths)
 }
-
+get_total_deaths(national)
 # Run the following code to create a plot of cumulative cases over time
 # (we'll explain the ggplot2 syntax next week)
 cases_plot <- ggplot(data = national) +
   geom_line(mapping = aes(x = as.Date(date), y = cases)) +
   labs(x = "Date", y = "Cumulative Cases", title = "U.S. COVID Cases")
+
